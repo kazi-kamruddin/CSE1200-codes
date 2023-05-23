@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+struct point {
+    double x;
+    double y;
+    double sqr;
+
+    point (){}
+
+    point (double one, double two) {
+       x = one;
+       y = two;
+    }
+
+    void print_point (){
+        cout << x << " " << y << endl;
+    }
+
+    double distance(point a){
+        sqr = sqrt(((x-a.x) * (x-a.x)) + ((y-a.y) * (y-a.y)));
+        return sqr;
+    }
+};
+
+int main(){
+
+    point first(4.5, 6.8);
+    point second(3.7, 9.3);
+
+    first.print_point();
+    second.print_point();
+
+    double ans;
+
+    ans = first.distance(second);
+
+    cout << ans;
+
+    return 0;
+}
+
